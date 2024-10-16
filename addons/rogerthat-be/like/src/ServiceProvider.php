@@ -8,6 +8,7 @@ class ServiceProvider extends AddonServiceProvider
 {
     protected $tags = [
         Tags\Like::class,
+        Tags\Dislike::class,
     ];
 
     protected $modifiers = [];
