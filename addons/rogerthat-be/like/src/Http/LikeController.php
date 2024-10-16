@@ -3,12 +3,13 @@
 namespace RogerthatBe\Like\Http;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request as Request;
 
 class LikeController extends Controller
 {
-    public function storeLike()
+    public function storeLike(Request $request)
     {
-        return 'like is being stored';
+        dd($request->all());
     }
 
 }

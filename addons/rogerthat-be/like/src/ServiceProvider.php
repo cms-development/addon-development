@@ -15,6 +15,10 @@ class ServiceProvider extends AddonServiceProvider
         Modifiers\Smile::class,
     ];
 
+    protected $routes = [
+        'actions' => __DIR__.'/../routes/actions.php',
+    ];
+    
     protected $commands = [];
 
     protected $publishables = [];
@@ -25,9 +29,6 @@ class ServiceProvider extends AddonServiceProvider
 
     protected $scripts = [];
 
-    protected $routes = [
-        'actions' => __DIR__.'/../routes/actions.php',
-    ];
 
 
     public function bootAddon()
