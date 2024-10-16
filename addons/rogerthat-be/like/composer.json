@@ -1,0 +1,19 @@
+{
+    "name": "rogerthat-be/like",
+    "autoload": {
+        "psr-4": {
+            "RogerthatBe\\Like\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Like",
+            "description": "Like addon"
+        },
+        "laravel": {
+            "providers": [
+                "RogerthatBe\\Like\\ServiceProvider"
+            ]
+        }
+    }
+}

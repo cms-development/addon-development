@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "377f12fac845b056eafba1abd659f6be",
+    "content-hash": "7e754caf60e6cb4b7c427d39032b1fa2",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -4184,6 +4184,35 @@
                 "source": "https://github.com/rhukster/dom-sanitizer/tree/1.0.7"
             },
             "time": "2023-11-06T16:46:48+00:00"
+        },
+        {
+            "name": "rogerthat-be/like",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "addons/rogerthat-be/like",
+                "reference": "83cc5e4605fef13d9523b174bf09d4d400ec8929"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Like",
+                    "description": "Like addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "RogerthatBe\\Like\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RogerthatBe\\Like\\": "src"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "scrivo/highlight.php",
