@@ -9,6 +9,6 @@ class Dislike extends Tags {
      * The {{ dislike }} tag.
      */
     public function index() {
-        return '🙁'; // {{ dislike }}
+        return '<button>dislike</button>'; // {{ dislike }}
     }
 }

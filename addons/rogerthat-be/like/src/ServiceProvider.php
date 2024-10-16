@@ -11,7 +11,9 @@ class ServiceProvider extends AddonServiceProvider
         Tags\Dislike::class,
     ];
 
-    protected $modifiers = [];
+    protected $modifiers = [
+        Modifiers\Smile::class,
+    ];
 
     protected $commands = [];
 
