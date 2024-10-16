@@ -25,7 +25,9 @@ class ServiceProvider extends AddonServiceProvider
 
     protected $scripts = [];
 
-    protected $routes = [];
+    protected $routes = [
+        'actions' => __DIR__.'/../routes/actions.php',
+    ];
 
 
     public function bootAddon()
