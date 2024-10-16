@@ -9,7 +9,9 @@ class Like extends Tags {
      * The {{ like }} tag.
      */
     public function index() {
-        return '👍🏼'; // {{ like }}
+        return view('like::tags.likeBtn', [
+            'entry_id' => 12345
+        ]);
     }
     
     /**
