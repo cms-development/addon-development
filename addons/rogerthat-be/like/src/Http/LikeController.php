@@ -11,8 +11,6 @@ class LikeController extends Controller
 {
     public function storeLike(Request $request)
     {
-        // dd($request->all());
-
         $entryId = $request->entry_id;
 
         // path to /resources/like/likes.yaml
@@ -21,16 +19,18 @@ class LikeController extends Controller
         // get the data from the file
         $likes = YAML::file($likesPath)->parse();
 
+        if(!isset($likes[$entryId])) {
+            $likes[$entryId] = 0;
+        }
+
         // add this like to the array
         $likes[$entryId] = $likes[$entryId] + 1;
 
         // save the data back to the file
-        YAML::file($likesPath)->set($likes)->save();
+        $yamlData = YAML::dump($likes);
+        file_put_contents($likesPath, $yamlData);
 
-        return response()->json([
-            'message' => 'Like added',
-            'likes' => $likes[$entryId]
-        ]);
+        return back();
     }
 
 }
