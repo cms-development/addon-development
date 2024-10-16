@@ -1,0 +1,18 @@
+<h1>Alle producten</h1>
+{{ content }} <!-- This is the content of the page -->
+<ul class="text-green-500 list-disc pl-4">
+<!-- This is the loop that will display all the products, on the products index page -->
+    {{ collection:products }}
+        <li class="mb-2">
+           <a href="{{ url }}">{{ title }}</a> 
+            ( 
+                {{ types }}
+                    {{ title }}
+                    {{ if not last }}
+                        ,
+                    {{ /if }}   
+                {{/types}} 
+            )
+        </li>
+    {{ /collection:products }}
+</ul>

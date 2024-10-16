@@ -1,0 +1,26 @@
+{{ title }}
+
+
+{{ content }}
+
+<hr>
+<br>
+<em>Dit artikel lezen zal ongeveer {{ read_time }}m duren</em>
+<br>
+{{ block_builder }}
+<div class="border border-green-400 mt-2 p-3">
+
+    {{ if type == "text" }}
+        {{ text }}
+    {{ /if }}
+    
+    {{ if type == "quote" }}
+        <h3 class="text-green-400">{{ title }}</h3>
+        <p>{{ author }}</p>
+    {{ /if }}
+
+</div>
+{{ /block_builder }}
+
+<hr>
+
