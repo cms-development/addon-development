@@ -9,7 +9,7 @@
     }
 </style>
 
-<form method="POST" action="/">
+<form method="POST" action="{{ route::statamic.like.store }}">
     {{ csrf_field }}
     <input type="hidden" name="entry_id" value="{{ entry_id }}">
     <button type="submit" class="">I like ♥️</button>
