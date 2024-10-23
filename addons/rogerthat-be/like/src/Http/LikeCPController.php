@@ -2,6 +2,7 @@
 
 namespace RogerthatBe\Like\Http;
 
+use Statamic\Facades\Collection;
 use Statamic\Http\Controllers\Controller;
 
 class LikeCPController extends Controller {
@@ -9,6 +10,11 @@ class LikeCPController extends Controller {
         return view('like::cp.index');
     }
     public function settings() {
-        return view('like::cp.settings');
+
+        $allCollections = Collection::all();
+
+        return view('like::cp.settings', [
+            'collections' => $allCollections
+        ]);
     }   
 }
