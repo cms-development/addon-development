@@ -24,4 +24,11 @@ class Like extends Tags {
     public function not() {
         return '👎🏼'; // {{ like:not }}
     }
+
+    public function show( ) {
+        // base path ophalen
+        // huidige context: entry id
+        // uit de yaml file het aantal likes ophalen
+        // returnen van de likes
+    }
 }
