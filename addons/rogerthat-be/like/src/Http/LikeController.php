@@ -16,6 +16,11 @@ class LikeController extends Controller
         // path to /resources/like/likes.yaml
         $likesPath = base_path('resources/like/likes.yaml');
 
+        // if file not exists, create
+        if(!file_exists($likesPath)) {
+            file_put_contents($likesPath, '');
+        }
+
         // get the data from the file
         $likes = YAML::file($likesPath)->parse();
 
