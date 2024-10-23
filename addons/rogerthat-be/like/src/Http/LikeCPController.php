@@ -28,7 +28,7 @@ class LikeCPController extends Controller {
         // get the default blueprint
         $defaultBP = $collection->entryBlueprints()->first();
 
-        $defaultBP->ensureField('like', [
+        $defaultBP->ensureField('likeCount', [
             'type' => 'integer',
             'display' => 'Like',
             'instructions' => 'Enable likes for this entry',

@@ -4,6 +4,7 @@ namespace RogerthatBe\Like\Http;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request as Request;
+use Statamic\Facades\Entry;
 use Statamic\Facades\YAML;
 
 
@@ -36,6 +37,25 @@ class LikeController extends Controller
         file_put_contents($likesPath, $yamlData);
 
         return back();
+    }
+
+    public function storeLikeToField(Request $request) {
+        $entryId = $request->entry_id;
+
+        // handle of the field = 'like' (integer field)
+        $fieldHandle = 'like';
+
+        // get the entry
+        $entry = Entry::find($entryId);
+        
+        // count++ to the field
+        $entry->set($fieldHandle, $entry->get($fieldHandle) + 1);
+
+        // save the entry
+        $entry->save();
+
+        return back();
+
     }
 
 }
