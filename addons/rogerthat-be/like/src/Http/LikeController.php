@@ -43,7 +43,7 @@ class LikeController extends Controller
         $entryId = $request->entry_id;
 
         // handle of the field = 'like' (integer field)
-        $fieldHandle = 'like';
+        $fieldHandle = 'likeCount';
 
         // get the entry
         $entry = Entry::find($entryId);
