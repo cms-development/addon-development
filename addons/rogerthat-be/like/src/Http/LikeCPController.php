@@ -6,9 +6,9 @@ use Statamic\Http\Controllers\Controller;
 
 class LikeCPController extends Controller {
     public function index() {
-        return "index";
+        return view('like::cp.index');
     }
     public function settings() {
-        return "settings";
+        return view('like::cp.settings');
     }   
 }
