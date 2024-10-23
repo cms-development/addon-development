@@ -20,6 +20,10 @@ class LikeCPController extends Controller {
     }   
 
     public function addFieldsToCollection(Request $request) {
-        dd($request->all());
+        $collection = $request->collection;
+
+        // todo: add a "numeric" field with a "like" handle to that collection
+
+        // redirect back with a nice message
     }
 }
