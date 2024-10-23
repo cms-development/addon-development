@@ -3,6 +3,8 @@
 namespace RogerthatBe\Like\Tags;
 
 use Statamic\Tags\Tags;
+use RogerthatBe\Like\Constants;
+use Statamic\Facades\YAML;
 
 class Like extends Tags {
     /**
@@ -26,9 +28,19 @@ class Like extends Tags {
     }
 
     public function show( ) {
-        // base path ophalen
+        // return base path
+        $likePath = Constants::getLikeSettingsPath();
+
+        // parse yaml file
+        $likes = YAML::file($likePath)->parse();
+
         // huidige context: entry id
-        // uit de yaml file het aantal likes ophalen
-        // returnen van de likes
+        $currentId = $this->context->get('id')->value();
+
+        if(isset($likes[$currentId])) {
+            return $likes[$currentId] . " likes";
+        } else {
+            return "geen likes";
+        }
     }
 }

@@ -8,5 +8,9 @@ class Constants {
     public static function getAddonPath() {
         return self::ADDON_PATH;
     }
+
+    public static function getLikeSettingsPath() {
+        return resource_path('like/likes.yaml');
+    }
 }
 
