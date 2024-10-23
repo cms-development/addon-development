@@ -18,6 +18,7 @@ class ServiceProvider extends AddonServiceProvider
 
     protected $routes = [
         'actions' => __DIR__.'/../routes/actions.php',
+        'cp' => __DIR__.'/../routes/cp.php',
     ];
     protected $commands = [];
     protected $publishables = [];
@@ -33,7 +34,7 @@ class ServiceProvider extends AddonServiceProvider
         Nav::extend(function ($nav) {
             $nav->content('Like')->section('Tools')
                 ->route('like.index')
-                ->icon('like')
+                ->icon('assets')
                 ->children([
                     'Like' => "#", // cp_route('like.index'),
                     'Settings' => "#", //cp_route('like.settings'),
