@@ -2,6 +2,7 @@
 
 namespace RogerthatBe\Like\Http;
 
+use Illuminate\Http\Request;
 use Statamic\Facades\Collection;
 use Statamic\Http\Controllers\Controller;
 
@@ -17,4 +18,8 @@ class LikeCPController extends Controller {
             'collections' => $allCollections
         ]);
     }   
+
+    public function addFieldsToCollection(Request $request) {
+        dd($request->all());
+    }
 }
