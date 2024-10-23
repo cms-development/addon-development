@@ -20,10 +20,22 @@ class LikeCPController extends Controller {
     }   
 
     public function addFieldsToCollection(Request $request) {
-        $collection = $request->collection;
+        $collectionHandle = $request->collection;
 
-        // todo: add a "numeric" field with a "like" handle to that collection
+        // get the collection
+        $collection = Collection::find($collectionHandle);
+        
+        // get the default blueprint
+        $defaultBP = $collection->entryBlueprints()->first();
 
-        // redirect back with a nice message
+        $defaultBP->ensureField('like', [
+            'type' => 'integer',
+            'display' => 'Like',
+            'instructions' => 'Enable likes for this entry',
+        ]);
+
+        $defaultBP->save();
+
+        return redirect()->back()->with('succes', 'Greaaaat succes!');
     }
 }
