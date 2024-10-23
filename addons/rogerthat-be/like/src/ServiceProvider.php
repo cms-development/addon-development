@@ -36,8 +36,8 @@ class ServiceProvider extends AddonServiceProvider
                 ->route('like.index')
                 ->icon('assets')
                 ->children([
-                    'Like' => "#", // cp_route('like.index'),
-                    'Settings' => "#", //cp_route('like.settings'),
+                    'Like' => cp_route('like.index'),
+                    'Settings' => cp_route('like.settings'),
                 ]);
         });
     }
