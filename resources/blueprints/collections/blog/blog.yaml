@@ -36,6 +36,12 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+          -
+            handle: likeCount
+            field:
+              type: integer
+              display: Like
+              instructions: 'Enable likes for this entry'
   sidebar:
     display: Sidebar
     sections:
